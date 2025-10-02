@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velas Mágicas - Tu Tienda de Velas Artesanales</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos (opcional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            /* Naranja suave */
+        }
+
+        .hero-section {
+            background: url('https://via.placeholder.com/1500x500/ffe0b2/fff?text=Velas+Artesanales+con+Amor') no-repeat center center/cover;
+            /* Placeholder para imagen de fondo */
+            color: #333;
+            padding: 100px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .footer {
+            background-color: #ffe0b2;
+            color: #555;
+            padding: 30px 0;
+        }
+
+        .filter-sidebar {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Velasleric</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section text-center" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Personaliza tus detalles con Waxmelt.</h1>
+            <p class="lead mt-3">Descubre la magia de los aromas y la calidez en cada llama.</p>
+            <a href="#productos" class="btn btn-dark btn-lg mt-4">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section id="productos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5">Nuestros Productos</h2>
+
+            <div class="row">
+                <!-- Sidebar de Filtros -->
+                <!-- <div class="col-md-3">
+                    <div class="filter-sidebar">
+                        <h4 class="mb-3">Filtrar por:</h4>
+                        <div class="mb-3">
+                            <strong>Categorías:</strong>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="aromaterapia" id="catAromaterapia">
+                                <label class="form-check-label" for="catAromaterapia">
+                                    Aromaterapia
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="decoracion" id="catDecoracion">
+                                <label class="form-check-label" for="catDecoracion">
+                                    Decoración
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="tematicas" id="catTematicas">
+                                <label class="form-check-label" for="catTematicas">
+                                    Temáticas
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Aromas:</strong>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="vainilla" id="aromaVainilla">
+                                <label class="form-check-label" for="aromaVainilla">
+                                    Vainilla
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="lavanda" id="aromaLavanda">
+                                <label class="form-check-label" for="aromaLavanda">
+                                    Lavanda
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="citricos" id="aromaCitricos">
+                                <label class="form-check-label" for="aromaCitricos">
+                                    Cítricos
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="especias" id="aromaEspecias">
+                                <label class="form-check-label" for="aromaEspecias">
+                                    Especias
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Colores:</strong>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="rojo" id="colorRojo">
+                                <label class="form-check-label" for="colorRojo">
+                                    Rojo
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="azul" id="colorAzul">
+                                <label class="form-check-label" for="colorAzul">
+                                    Azul
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="verde" id="colorVerde">
+                                <label class="form-check-label" for="colorVerde">
+                                    Verde
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="blanco" id="colorBlanco">
+                                <label class="form-check-label" for="colorBlanco">
+                                    Blanco
+                                </label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-100" onclick="applyFilters()">Aplicar Filtros</button>
+                        <button class="btn btn-outline-secondary w-100 mt-2" onclick="resetFilters()">Limpiar Filtros</button>
+                    </div>
+                </div> -->
+
+                <!-- Lista de Productos -->
+                <div class="col-md-12">
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="product-list">
+                        <!-- Ejemplo de Producto 1 (modificado, asumiendo que es el primero de tu lista completa) -->
+                        <div class="col product-item" data-categories="aromaterapia" data-aromas="lavanda"
+                            data-colores="morado">
+                            <div class="card h-100 product-card">
+                                <img src="./images/1.jpg" class="card-img-top w-100 h-auto d-block mx-auto"
+                                    alt="Vela de Lavanda">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Vela Relajante de Lavanda</h5>
+                                    <p class="card-text text-muted">Aroma: Lavanda | Color: Morado</p>
+                                    <p class="fw-bold fs-5">12.99€</p>
+                                    <a href="https://wa.me/34612345678?text=Hola!%20Estoy%20interesado%20en%20la%20Vela%20Relajante%20de%20Lavanda"
+                                        target="_blank" class="btn btn-success me-2"><i class="fab fa-whatsapp"></i>
+                                        Comprar</a>
+                                    <a href="product.html?id=1&name=Vela%20Relajante%20de%20Lavanda&price=12.99&aroma=Lavanda&color=Morado&category=Aromaterapia&image=./images/1.jpg&description=Una%20exquisita%20vela%20de%20lavanda%20para%20crear%20un%20ambiente%20de%20calma%20y%20relajación%20profunda.%20Perfecta%20para%20meditar%20o%20simplemente%20desconectar%20después%20de%20un%20largo%20día."
+                                        class="btn btn-primary product-detail-link"><i class="fas fa-info-circle"></i>
+                                        Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ejemplo de Producto 2 -->
+                        <div class="col product-item" data-categories="decoracion" data-aromas="vainilla"
+                            data-colores="crema">
+                            <div class="card h-100 product-card">
+                                <img src="./images/2.jpg" class="card-img-top w-100 h-auto d-block mx-auto"
+                                    alt="Vela de Vainilla">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Vela Dulce de Vainilla</h5>
+                                    <p class="card-text text-muted">Aroma: Vainilla | Color: Crema</p>
+                                    <p class="fw-bold fs-5">10.50€</p>
+                                    <a href="https://wa.me/34612345678?text=Hola!%20Estoy%20interesado%20en%20la%20Vela%20Dulce%20de%20Vainilla"
+                                        target="_blank" class="btn btn-success me-2"><i class="fab fa-whatsapp"></i>
+                                        Comprar</a>
+                                    <a href="product.html?id=2&name=Vela%20Dulce%20de%20Vainilla&price=10.50&aroma=Vainilla&color=Crema&category=Decoracion&image=./images/2.jpg&description=Disfruta%20del%20dulce%20y%20cálido%20aroma%20de%20vainilla%20con%20esta%20elegante%20vela.%20Ideal%20para%20crear%20un%20ambiente%20acogedor%20en%20cualquier%20habitación."
+                                        class="btn btn-primary product-detail-link"><i class="fas fa-info-circle"></i>
+                                        Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ejemplo de Producto 3 -->
+                        <div class="col product-item" data-categories="tematicas" data-aromas="citricos"
+                            data-colores="naranja">
+                            <div class="card h-100 product-card">
+                                <img src="./images/3.jpg" class="card-img-top w-100 h-auto d-block mx-auto"
+                                    alt="Vela Cítrica">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Vela Energía Cítrica</h5>
+                                    <p class="card-text text-muted">Aroma: Limón y Naranja | Color: Naranja</p>
+                                    <p class="fw-bold fs-5">15.00€</p>
+                                    <a href="https://wa.me/34612345678?text=Hola!%20Estoy%20interesado%20en%20la%20Vela%20Energ%C3%ADa%20C%C3%ADtrica"
+                                        target="_blank" class="btn btn-success me-2"><i class="fab fa-whatsapp"></i>
+                                        Comprar</a>
+                                    <a href="product.html?id=3&name=Vela%20Energía%20Cítrica&price=15.00&aroma=Limón%20y%20Naranja&color=Naranja&category=Temáticas&image=./images/3.jpg&description=Esta%20vela%20con%20aroma%20cítrico%20es%20perfecta%20para%20revitalizar%20y%20energizar%20cualquier%20espacio.%20Una%20explosión%20de%20frescura."
+                                        class="btn btn-primary product-detail-link"><i class="fas fa-info-circle"></i>
+                                        Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Puedes añadir más productos aquí siguiendo la misma estructura -->
+                        <div class="col product-item" data-categories="aromaterapia" data-aromas="lavanda"
+                            data-colores="morado">
+                            <div class="card h-100 product-card">
+                                <img src="./images/4.jpg" class="card-img-top w-100 h-auto d-block mx-auto"
+                                    alt="Vela Aromática">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Vela Aromática Floral</h5>
+                                    <p class="card-text text-muted">Aroma: Flores Silvestres | Color: Rosa</p>
+                                    <p class="fw-bold fs-5">14.00€</p>
+                                    <a href="https://wa.me/34612345678?text=Hola!%20Estoy%20interesado%20en%20la%20Vela%20Aromática%20Floral"
+                                        target="_blank" class="btn btn-success me-2"><i class="fab fa-whatsapp"></i>
+                                        Comprar</a>
+                                    <a href="product.html?id=4&name=Vela%20Aromática%20Floral&price=14.00&aroma=Flores%20Silvestres&color=Rosa&category=Aromaterapia&image=./images/4.jpg&description=Transportate%20a%20un%20jardín%20en%20floración%20con%20esta%20vela%20de%20aromas%20florales%20silvestres.%20Ideal%20para%20momentos%20de%20serenidad."
+                                        class="btn btn-primary product-detail-link"><i class="fas fa-info-circle"></i>
+                                        Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ejemplo de Producto 5 -->
+                        <div class="col product-item" data-categories="decoracion" data-aromas="vainilla"
+                            data-colores="crema">
+                            <div class="card h-100 product-card">
+                                <img src="./images/5.jpg" class="card-img-top w-100 h-auto d-block mx-auto"
+                                    alt="Vela de Diseño">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Vela de Diseño Geométrico</h5>
+                                    <p class="card-text text-muted">Aroma: Sándalo | Color: Gris</p>
+                                    <p class="fw-bold fs-5">18.00€</p>
+                                    <a href="https://wa.me/34612345678?text=Hola!%20Estoy%20interesado%20en%20la%20Vela%20de%20Diseño%20Geométrico"
+                                        target="_blank" class="btn btn-success me-2"><i class="fab fa-whatsapp"></i>
+                                        Comprar</a>
+                                    <a href="product.html?id=5&name=Vela%20de%20Diseño%20Geométrico&price=18.00&aroma=Sándalo&color=Gris&category=Decoracion&image=./images/5.jpg&description=Una%20vela%20con%20un%20diseño%20moderno%20y%20geométrico%2C%20perfecta%20como%20elemento%20decorativo%20y%20con%20un%20cálido%20aroma%20a%20sándalo."
+                                        class="btn btn-primary product-detail-link"><i class="fas fa-info-circle"></i>
+                                        Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ejemplo de Producto 6 -->
+                        <div class="col product-item" data-categories="tematicas" data-aromas="citricos"
+                            data-colores="naranja">
+                            <div class="card h-100 product-card">
+                                <img src="./images/6.jpg" class="card-img-top w-100 h-auto d-block mx-auto"
+                                    alt="Vela de Temporada">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Vela de Temporada Navideña</h5>
+                                    <p class="card-text text-muted">Aroma: Canela y Pino | Color: Rojo</p>
+                                    <p class="fw-bold fs-5">16.50€</p>
+                                    <a href="https://wa.me/34612345678?text=Hola!%20Estoy%20interesado%20en%20la%20Vela%20de%20Temporada%20Navideña"
+                                        target="_blank" class="btn btn-success me-2"><i class="fab fa-whatsapp"></i>
+                                        Comprar</a>
+                                    <a href="product.html?id=6&name=Vela%20de%20Temporada%20Navideña&price=16.50&aroma=Canela%20y%20Pino&color=Rojo&category=Temáticas&image=./images/6.jpg&description=Crea%20un%20ambiente%20festivo%20con%20esta%20vela%20de%20temporada%20con%20aroma%20a%20canela%20y%20pino.%20Ideal%20para%20las%20fiestas."
+                                        class="btn btn-primary product-detail-link"><i class="fas fa-info-circle"></i>
+                                        Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros Section -->
+    <section id="sobre-nosotros" class="bg-light py-5">
+        <div class="container text-center">
+            <h2 class="mb-4 display-5">Nuestra Historia</h2>
+            <p class="lead">En Velasleric, creemos en el poder de la luz y el aroma para transformar cualquier espacio.
+            </p>
+            <p>Cada una de nuestras velas es hecha a mano con amor, utilizando ingredientes naturales y esencias de alta
+                calidad para brindarte una experiencia única.</p>
+            <p>Desde velas relajantes hasta opciones decorativas, tenemos algo especial para cada momento y cada
+                persona. ¡Descubre la magia!</p>
+            <img src="https://via.placeholder.com/800x400/ffe0b2/fff?text=Taller+de+Velas"
+                class="img-fluid rounded mt-4" alt="Taller de Velas">
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4 display-5">Contáctanos</h2>
+            <p class="lead">¿Tienes alguna pregunta o quieres un pedido personalizado? ¡Estamos aquí para ayudarte!</p>
+            <p class="fs-4 mt-4">
+                <i class="fab fa-whatsapp text-success me-2"></i> WhatsApp: <a href="https://wa.me/TUNUMERODEWHATSAPP"
+                    target="_blank" class="text-success text-decoration-none">+XX XXX XXX XXX</a>
+            </p>
+            <p class="fs-4">
+                <i class="fab fa-instagram text-primary me-2"></i> Instagram: <a
+                    href="https://www.instagram.com/velasleric" target="_blank"
+                    class="text-primary text-decoration-none">@velasleric</a>
+            </p>
+            <p class="fs-4">
+                <i class="fas fa-envelope text-info me-2"></i> Email: <a href="mailto:tuemail@example.com"
+                    class="text-info text-decoration-none">tuemail@example.com</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center mt-5">
+        <div class="container">
+            <p>&copy; 2025 Velasleric. Todos los derechos reservados.</p>
+            <p>Desarrollado por <a href="https://www.instagram.com/hugocarni" target="_blank">hugocarni</a></p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/velasleric" target="_blank" class="text-dark mx-2"><i
+                        class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://facebook.com/TUUSUARIODEFACEBOOK" target="_blank" class="text-dark mx-2"><i
+                        class="fab fa-facebook fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script para los filtros
+        function applyFilters() {
+            const selectedCategories = Array.from(document.querySelectorAll('#catAromaterapia:checked, #catDecoracion:checked, #catTematicas:checked')).map(cb => cb.value);
+            const selectedAromas = Array.from(document.querySelectorAll('#aromaVainilla:checked, #aromaLavanda:checked, #aromaCitricos:checked, #aromaEspecias:checked')).map(cb => cb.value);
+            const selectedColores = Array.from(document.querySelectorAll('#colorRojo:checked, #colorAzul:checked, #colorVerde:checked, #colorBlanco:checked')).map(cb => cb.value);
+
+            const productItems = document.querySelectorAll('.product-item');
+
+            productItems.forEach(item => {
+                const itemCategories = item.dataset.categories ? item.dataset.categories.split(',') : [];
+                const itemAromas = item.dataset.aromas ? item.dataset.aromas.split(',') : [];
+                const itemColores = item.dataset.colores ? item.dataset.colores.split(',') : [];
+
+                const matchesCategory = selectedCategories.length === 0 || selectedCategories.some(cat => itemCategories.includes(cat));
+                const matchesAroma = selectedAromas.length === 0 || selectedAromas.some(aroma => itemAromas.includes(aroma));
+                const matchesColor = selectedColores.length === 0 || selectedColores.some(color => itemColores.includes(color));
+
+                if (matchesCategory && matchesAroma && matchesColor) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function resetFilters() {
+            document.querySelectorAll('.form-check-input').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            applyFilters(); // Aplicar filtros para mostrar todos los productos
+        }
+
+        // Script para desplazamiento suave en la navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
